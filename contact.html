@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitec - Contact Us</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        /* Custom styles can be added here if needed */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="logo">
+                <!-- Using a placeholder for the logo -->
+                <img src="https://placehold.co/150x50/000000/FFFFFF?text=Vitec" alt="Vitec Logo" class="h-12">
+            </div>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="services.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
+                <a href="about.html" class="text-gray-600 hover:text-blue-600 transition duration-300">About Us</a>
+                <a href="contact.html" class="text-blue-600 font-semibold">Contact</a>
+            </nav>
+            <div class="contact-info-header text-sm text-right text-gray-700">
+                <span class="font-semibold">Pieter van Rooyen</span><br>
+                <span>Call: +27 63 251 1232</span>
+            </div>
+             <!-- Mobile Menu Button (optional) -->
+            <div class="md:hidden">
+                <button class="text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header Section -->
+        <section class="page-header bg-gray-100 py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold text-gray-800">Connect with Vitec Technolgies</h1>
+            </div>
+        </section>
+
+        <!-- =========== UPDATED CONTACT FORM SECTION =========== -->
+        <section class="contact-form-section py-12 md:py-20">
+            <div class="container mx-auto px-6">
+                <!-- Form Container -->
+                <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8 md:p-12">
+                    <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Send Us a Message</h2>
+                    
+                    <!-- The form action and method are kept as per your original code -->
+                    <form action="send_email.php" method="POST" class="contact-form space-y-6">
+                        
+                        <!-- Name Field -->
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name:</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition duration-300" required>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email:</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition duration-300" required>
+                        </div>
+
+                        <!-- Phone Field -->
+                        <div>
+                            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone:</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                        </div>
+                        
+                        <!-- Subject Field -->
+                        <div>
+                            <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Subject:</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                        </div>
+
+                        <!-- Message Field -->
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message:</label>
+                            <textarea id="message" name="message" rows="6" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition duration-300" required></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center pt-4">
+                            <button type="submit" class="w-auto bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-3 px-8 rounded-md transition duration-300 ease-in-out transform hover:scale-105">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- ======================================================= -->
+
+
+        <!-- Other sections from your original code -->
+        <section class="direct-contact-info bg-gray-100 py-12">
+            <div class="container mx-auto px-6 max-w-2xl text-center">
+                <h2 class="text-2xl font-bold mb-4">Or Reach Us Directly</h2>
+                <p class="mb-2"><strong>Pieter van Rooyen</strong> (Principal Developer)</p>
+                <p class="mb-2"><strong>Cell:</strong> +27 63 251 1232</p>
+                <p class="mb-4"><strong>Email:</strong> <a href="mailto:info@vitec.co.za" class="text-blue-600 hover:underline">info@vitec.co.za</a></p>
+                <p>
+                    <strong>Physical Address:</strong><br>
+                    19 Glen str, Equestria<br>
+                    Pretoria, Gauteng, South Africa
+                </p>
+            </div>
+        </section>
+        
+        <section class="office-location py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-2xl font-bold mb-6">Find Us on the Map</h2>
+                <div class="w-full max-w-4xl mx-auto shadow-lg rounded-lg overflow-hidden">
+                    <iframe src="https://maps.google.com/maps?q=19+Glen+Ave%2C+Equestria%2C+Pretoria&t=&z=15&ie=UTF8&iwloc=&output=embed" class="w-full" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="footer-links mb-4">
+                <a href="index.html" class="px-3 hover:text-yellow-400">Home</a>
+                <a href="services.html" class="px-3 hover:text-yellow-400">Services</a>
+                <a href="about.html" class="px-3 hover:text-yellow-400">About Us</a>
+                <a href="contact.html" class="px-3 hover:text-yellow-400">Contact</a>
+            </div>
+            <div class="legal-info text-sm text-gray-400">
+                © 2025 Vitec. All Rights Reserved. | 
+                <a href="privacy.html" class="hover:text-yellow-400">Privacy Policy</a> | 
+                <a href="terms.html" class="hover:text-yellow-400">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
