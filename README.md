@@ -1,2 +1,0 @@
-# VITEC-Website
-
