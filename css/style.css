@@ -1,10 +1,30 @@
+/* --- Color Palette Variables --- */
+:root {
+    /* Brand Colors */
+    --primary: #34D399;          /* Main neon green */
+    --primary-light: #6EE7B7;    /* Lighter neon green */
+    --primary-neon: #39FF14;      /* Brightest neon green for logo */
+
+    /* Greyscale & Backgrounds */
+    --gray-darkest: #111827;      /* Deep dark background */
+    --gray-darker: #1F2937;      /* Lighter dark for cards/header */
+    --gray-dark: #374151;        /* Border color */
+    --gray-medium: #4B5563;      /* Input border */
+    --gray-light: #9CA3AF;       /* Muted footer text */
+
+    /* Text Colors */
+    --text-main: #D1D5DB;        /* Default light gray text */
+    --text-headings: #F9FAFB;    /* Off-white for headings */
+}
+
+
 /* --- Basic Reset & Typography --- */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    color: #333;
-    background-color: #f9f9f9;
+    color: var(--text-main); 
+    background-color: var(--gray-darkest);
 }
 
 .container {
@@ -14,7 +34,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: #222;
+    color: var(--text-headings);
     line-height: 1.2;
 }
 
@@ -27,18 +47,20 @@ p {
 }
 
 a {
-    color: #007bff;
+    color: var(--primary);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: var(--primary-light);
+    text-decoration: none;
 }
 
 /* --- Header & Navigation --- */
 header {
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: var(--gray-darker);
+    border-bottom: 1px solid var(--gray-dark);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -51,14 +73,18 @@ header .container {
     align-items: center;
 }
 
+/* --- LOGO --- */
 .logo {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
-    color: #333;
+    color: var(--primary-neon); /* Using the brightest neon for the logo */
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5); /* Glow for the brightest neon */
 }
 .logo:hover {
+    color: var(--primary-light);
     text-decoration: none;
 }
+
 
 nav ul {
     list-style: none;
@@ -72,7 +98,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #555;
+    color: var(--text-main);
     font-weight: 500;
     padding-bottom: 5px;
     border-bottom: 2px solid transparent;
@@ -81,8 +107,8 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #007bff;
-    border-bottom-color: #007bff;
+    color: var(--primary);
+    border-bottom-color: var(--primary);
 }
 
 
@@ -96,47 +122,46 @@ section {
 }
 
 .hero {
-    background: #e9ecef;
+    background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070') center/cover;
     text-align: center;
     padding: 6rem 0;
+    border-bottom: 1px solid var(--gray-dark);
 }
 
 .page-header {
-    background-color: #f4f4f4;
+    background-color: var(--gray-darker);
     padding: 2rem 0;
     text-align: center;
+    border-bottom: 1px solid var(--gray-dark);
 }
 main > .page-header {
-    padding-top: 0; /* Remove top padding if it's the first element */
+    padding-top: 0;
 }
 
 
 /* --- Buttons & Links --- */
 .cta-button {
     display: inline-block;
-    background: #007bff;
-    color: #fff;
+    background: var(--primary);
+    color: var(--gray-darkest);
     padding: 12px 25px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 211, 153, 0.2);
 }
 
 .cta-button:hover {
-    background: #0056b3;
+    background: var(--primary-light);
     text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(110, 231, 183, 0.3);
 }
 
-.link-more {
-    display: inline-block;
-    margin-top: 1rem;
-    font-weight: bold;
-}
 
 /* --- Service Cards --- */
-.services-overview { text-align: center; }
-.service-cards, .portfolio-grid, .team-grid {
+.service-cards, .portfolio-grid, .team-grid, .services-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -145,33 +170,39 @@ main > .page-header {
 }
 
 .card, .project-card, .service-item {
-    background: #fff;
+    background: var(--gray-darker);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid var(--gray-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+.service-item h3 {
+    color: var(--primary); /* Striking color for service headings */
+    margin-bottom: 0.5rem;
 }
 
-.team-member { text-align: center; }
+.card:hover, .project-card:hover, .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    border-color: var(--gray-medium);
+}
+
+
 .team-member img {
     border-radius: 50%;
     margin-bottom: 1rem;
+    border: 3px solid var(--primary);
 }
 
 /* --- Contact Form --- */
 .contact-form {
     max-width: 700px;
     margin: 2rem auto;
-    background: #fff;
+    background: var(--gray-darker);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid var(--gray-dark);
 }
 
 .form-group {
@@ -182,24 +213,36 @@ main > .page-header {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: var(--text-headings);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    border: 1px solid var(--gray-medium);
     border-radius: 5px;
     font-size: 1rem;
+    background-color: var(--gray-darkest);
+    color: var(--text-main);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.3);
 }
 
 /* --- Footer --- */
 footer {
-    background: #333;
-    color: #eee;
+    background: var(--gray-darkest);
+    color: var(--gray-light);
     text-align: center;
-    padding: 2rem 0;
+    padding: 3rem 0;
     margin-top: 4rem;
+    border-top: 1px solid var(--gray-dark);
 }
 
 /* --- Responsive Design --- */
@@ -210,6 +253,10 @@ footer {
     header .container {
         flex-direction: column;
     }
+    
+    .logo, .logo-icon {
+        margin-bottom: 1rem;
+    }
 
     nav ul {
         margin-top: 1rem;
@@ -218,6 +265,43 @@ footer {
     }
 
     nav ul li {
-        margin: 0 10px;
+        margin: 5px 10px;
     }
+}
+/* --- Special Text Colors --- */
+.dark-blue-text {
+    color: #5DADE2; /* A clear, vibrant blue */
+    text-shadow: 0 0 5px rgba(93, 173, 226, 0.4); /* Optional subtle glow */
+}
+/* --- Golden Text Shine Effect --- */
+.golden-text-shine {
+  /* Define the gold gradient */
+  background: linear-gradient(
+    90deg, 
+    #B38728, 
+    #FBF5B7, 
+    #FFD700, 
+    #FBF5B7, 
+    #B38728
+  );
+  
+  /* Set the background size to be larger than the element */
+  background-size: 200% auto;
+
+  /* Clip the background to the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Make the text color transparent so the background shows through */
+  color: transparent;
+
+  /* Animate the background position to create the shine effect */
+  animation: shine 5s linear infinite;
+}
+
+/* Keyframes for the shine animation */
+@keyframes shine {
+  to {
+    background-position: -200% center;
+  }
 }

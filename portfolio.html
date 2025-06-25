@@ -3,62 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Your Software Company</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Portfolio - Vitec Technologies</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+    <!-- Custom Tailwind Configuration and Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#34D399', // Main neon green
+                        'primary-light': '#6EE7B7', // Lighter neon green
+                        'primary-neon': '#39FF14', // Brightest neon green for logo
+                        'gray-darkest': '#111827', // Deep dark background
+                        'gray-darker': '#1F2937', // Lighter dark for cards/header
+                        'gray-dark': '#374151', // Border color
+                        'gray-medium': '#4B5563', // Input border
+                        'gray-light': '#9CA3AF', // Muted footer text
+                        'text-main': '#D1D5DB', // Default light gray text
+                        'text-headings': '#F9FAFB', // Off-white for headings
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Styles for the text-based logo, consistent with other pages */
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #39FF14; /* --primary-neon */
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+        .logo:hover {
+            color: #6EE7B7; /* --primary-light */
+            text-decoration: none;
+        }
+        .golden-text-shine {
+            background: linear-gradient(135deg, #c09f39, #f9f0c7, #c09f39);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            animation: shine-effect 4s linear infinite;
+        }
+
+        @keyframes shine-effect {
+            to {
+                background-position: -200% center;
+            }
+        }
+        .dark-blue-text {
+            color: #5DADE2;
+            text-shadow: 0 0 5px rgba(93, 173, 226, 0.4);
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">Your Company Name</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+<body class="bg-gray-darkest text-text-main">
+
+    <!-- Header -->
+    <header class="bg-gray-darker shadow-md border-b border-gray-dark">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="logo">Vitec Technologies</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-primary-neon hover:text-primary-light transition duration-300">Home</a>
+                <a href="services.html" class="text-primary-neon hover:text-primary-light transition duration-300">Services</a>
+                <a href="portfolio.html" class="text-primary-light font-semibold border-b-2 border-primary pb-1">Portfolio</a>
+                <a href="about.html" class="text-primary-neon hover:text-primary-light transition duration-300">About</a>
+                <a href="contact.html" class="text-primary-neon hover:text-primary-light transition duration-300">Contact</a>
             </nav>
+            <div class="contact-info-header text-sm text-right text-text-main">
+                <span class="font-semibold">Pieter van Rooyen</span><br>
+                <span>Call: +27 63 251 1232</span>
+            </div>
+            <div class="md:hidden">
+                <button class="text-text-main focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="page-header">
-             <div class="container">
-                <h1>Our Work</h1>
-                <p>We are proud of the solutions we've delivered. Here are some of our recent projects.</p>
+        <section class="page-header bg-gray-darker py-12 border-b border-gray-dark">
+             <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold text-text-headings">Our Work</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-text-main">We are proud of the solutions we've delivered. Here are some of our recent projects. Contact us for a demo.</p>
             </div>
         </section>
 
-        <section class="portfolio-grid">
-            <div class="container">
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="Project 1 Screenshot">
-                    <h3>Project One: Enterprise CRM</h3>
-                    <p>A custom CRM solution for a leading sales company, increasing their productivity by 30%.</p>
-                </div>
-                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="Project 2 Screenshot">
-                    <h3>Project Two: Mobile E-Commerce App</h3>
-                    <p>A sleek and fast mobile shopping app for a fashion brand, available on iOS and Android.</p>
-                </div>
-                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="Project 3 Screenshot">
-                    <h3>Project Three: Cloud Data Platform</h3>
-                    <p>A scalable data processing platform built on AWS for a financial tech startup.</p>
-                </div>
-                 <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="Project 4 Screenshot">
-                    <h3>Project Four: Public-Facing Website</h3>
-                    <p>A modern, responsive website for a non-profit organization to boost online engagement.</p>
+        <section class="py-12 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="project-card bg-gray-darker p-6 rounded-lg border border-gray-dark">
+                        <img src="images/WeighTrackProLogo.png" alt="WeighTrackPro Logo" class="rounded-lg mb-4">
+                        <h3 class="golden-text-shine text-2xl font-bold">WeighTrackPro</h3>
+                        <p class="mt-2">WeighTrackPro, a comprehensive C# and SQL Server-based application designed for weighing and data management in industries handling bulk materials. The system facilitates real-time weighing data capture via RS232 port, manages company parameters including logo and contact details, and allows database configuration through a dedicated form. User roles and permissions are central to its security, governing access to features like weighing operations, reporting (Excel, PDF, email), and system settings. Additionally, it incorporates scale parameter management with automatic service and verification reminders via email, alongside robust auditing and error handling to ensure data integrity and system stability, demonstrating its focus on efficiency and reliability.</p>
+                    </div>
+                     <div class="project-card bg-gray-darker p-6 rounded-lg border border-gray-dark">
+                       <img src="images/BarCodeCreatorLogo.png" alt="BarCodeCreator Logo" class="rounded-lg mb-4">
+                        <h3 class="dark-blue-text text-2xl font-bold">Barcode Creator</h3>
+                        <p class="mt-2">Barcode Creator, a powerful and intuitive desktop application for Windows designed to streamline your product labeling workflow. Barcode Creator seamlessly integrates with your existing product database, allowing you to instantly generate and preview industry-standard CODE_128 barcodes for any item in your inventory. Simply select a product from the dropdown list, specify the number of labels you need, and print high-quality barcodes complete with product descriptions and codes. Built with C# and powered by the robust ZXing.Net engine, Barcode Creator offers a reliable and efficient solution for all your in-house barcode printing needs.</p>
+                    </div>
+                     <div class="project-card bg-gray-darker p-6 rounded-lg border border-gray-dark">
+                        <img src="https://placehold.co/800x500/1F2937/F9FAFB?text=Project+3" alt="Project 3 Screenshot" class="rounded-lg mb-4">
+                        <h3 class="text-2xl font-bold text-primary">Project Three: Cloud Data Platform</h3>
+                        <p class="mt-2">A scalable data processing platform built on AWS for a financial tech startup.</p>
+                    </div>
+                     <div class="project-card bg-gray-darker p-6 rounded-lg border border-gray-dark">
+                        <img src="https://placehold.co/800x500/1F2937/F9FAFB?text=Project+4" alt="Project 4 Screenshot" class="rounded-lg mb-4">
+                        <h3 class="text-2xl font-bold text-primary">Project Four: Public-Facing Website</h3>
+                        <p class="mt-2">A modern, responsive website for a non-profit organization to boost online engagement.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+    <footer class="bg-gray-darkest text-gray-light py-8 border-t border-gray-dark">
+        <div class="container mx-auto px-6 text-center">
+            <div class="footer-links mb-4">
+                <a href="index.html" class="px-3 hover:text-primary">Home</a>
+                <a href="services.html" class="px-3 hover:text-primary">Services</a>
+                <a href="portfolio.html" class="px-3 hover:text-primary">Portfolio</a>
+                <a href="about.html" class="px-3 hover:text-primary">About</a>
+                <a href="contact.html" class="px-3 hover:text-primary">Contact</a>
+            </div>
+            <p>&copy; 2025 Vitec Technologies. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
