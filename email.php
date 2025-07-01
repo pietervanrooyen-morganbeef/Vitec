@@ -1,76 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Status - Vitec</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <style>
-        /* Use Inter as the default font */
-        body { 
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 flex items-center justify-center min-h-screen p-6">
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data and sanitize it
+    $name = filter_var(trim($_POST["name"]), FILTER_SANITIZE_STRING);
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $phone = filter_var(trim($_POST["phone"]), FILTER_SANITIZE_STRING);
+    $subject = filter_var(trim($_POST["subject"]), FILTER_SANITIZE_STRING);
+    $message = filter_var(trim($_POST["message"]), FILTER_SANITIZE_STRING);
+
+    // Basic validation
+    if (empty($name) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($message)) {
+        // Handle error - redirect back to form with error message
+        http_response_code(400);
+        echo "Please fill out all required fields and provide a valid email.";
+        exit;
+    }
+
+    // --- Email Configuration ---
     
-    <!-- Status Card -->
-    <div class="max-w-lg w-full mx-auto bg-white rounded-xl shadow-2xl p-8 md:p-12 text-center">
-        <?php
-            // Initialize variables for message content
-            $heading = '';
-            $message = '';
-            $heading_color = 'text-gray-800'; // Default color
+    // The email address messages will be sent TO.
+    $recipient = "admin@vi-tec.co.za";
 
-            // Check for the status parameter in the URL
-            if (isset($_GET['status'])) {
-                $status = $_GET['status'];
+    // The subject line for the email you receive.
+    // If the user provided a subject, use it. Otherwise, use a default.
+    $email_subject = "New Contact Form Submission: " . (!empty($subject) ? $subject : "From $name");
 
-                if ($status == 'success') {
-                    // Success message
-                    $heading = 'Thank You!';
-                    $message = 'Your message has been sent successfully. We will get back to you shortly.';
-                    $heading_color = 'text-green-600';
-                } elseif ($status == 'error') {
-                    // Generic error message
-                    $heading = 'Oops!';
-                    $message = 'Something went wrong and we couldn\'t send your message. Please try again later.';
-                    $heading_color = 'text-red-600';
-                } elseif ($status == 'validation_error') {
-                    // Validation error
-                    $heading = 'Incomplete Form';
-                    $message = 'Please fill out all the required fields before submitting.';
-                    $heading_color = 'text-yellow-600';
-                } elseif ($status == 'email_error') {
-                    // Email format error
-                    $heading = 'Invalid Email';
-                    $message = 'The email address you entered is not in a valid format. Please correct it and try again.';
-                    $heading_color = 'text-yellow-600';
-                } else {
-                    // Any other error
-                    $heading = 'Error';
-                    $message = 'An unknown error occurred. Please try again.';
-                    $heading_color = 'text-red-600';
-                }
-            } else {
-                // Default message if no status is provided
-                $heading = 'Submission Status';
-                $message = 'This page is for displaying the status of your form submission.';
-            }
+    // Build the email content.
+    $email_content = "You have received a new message from your website contact form.\n\n";
+    $email_content .= "Here are the details:\n\n";
+    $email_content .= "Name: $name\n";
+    $email_content .= "Email: $email\n";
+    if (!empty($phone)) {
+        $email_content .= "Phone: $phone\n";
+    }
+    $email_content .= "\nMessage:\n$message\n";
 
-            // Display the messages
-            echo "<h1 class='text-4xl font-bold $heading_color mb-4'>$heading</h1>";
-            echo "<p class='text-gray-700 text-lg mb-8'>$message</p>";
-        ?>
-        
-        <!-- Back Button -->
-        <a href="contact.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
-            &larr; Go Back to Contact Page
-        </a>
-    </div>
+    // Build the email headers.
+    // This makes sure the email appears to come from the user so you can reply directly.
+    $email_headers = "From: $name <$email>";
 
-</body>
-</html>
+    // --- Send the Email ---
+    if (mail($recipient, $email_subject, $email_content, $email_headers)) {
+        // Success: Redirect to a thank-you page or back to the contact page
+        // For simplicity, we can redirect back to the contact page with a success status.
+        // You could create a dedicated 'thank-you.html' page for a better user experience.
+        header("Location: contact.html?status=success");
+        exit;
+    } else {
+        // Failure: Send an error response
+        http_response_code(500);
+        echo "Oops! Something went wrong and we couldn't send your message.";
+        exit;
+    }
+
+} else {
+    // Not a POST request, set a 403 (forbidden) response code.
+    http_response_code(403);
+    echo "There was a problem with your submission, please try again.";
+}
+?>
