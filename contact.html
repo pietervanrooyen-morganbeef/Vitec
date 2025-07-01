@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitec - Contact Us</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
-    <!-- Custom Tailwind Configuration and Styles -->
     <script>
         tailwind.config = {
             theme: {
@@ -36,7 +33,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Styles for the text-based logo, consistent with other pages */
         .logo {
             font-size: 1.8em;
             font-weight: bold;
@@ -53,13 +49,10 @@
 </head>
 <body class="bg-gray-darkest text-text-main">
 
-    <!-- Header -->
     <header class="bg-gray-darker shadow-md border-b border-gray-dark">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Replaced image logo with text-based logo for consistency -->
             <a href="index.html" class="logo">Vitec Technologies</a>
             
-            <!-- Navigation updated to use the same color as the logo -->
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="index.html" class="text-primary-neon hover:text-primary-light transition duration-300">Home</a>
                 <a href="services.html" class="text-primary-neon hover:text-primary-light transition duration-300">Services</a>
@@ -71,7 +64,6 @@
                 <span class="font-semibold">Pieter van Rooyen</span><br>
                 <span>Call: +27 63 251 1232</span>
             </div>
-            <!-- Mobile Menu Button -->
             <div class="md:hidden">
                 <button class="text-text-main focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -81,53 +73,39 @@
     </header>
 
     <main>
-        <!-- Page Header Section -->
         <section class="page-header bg-gray-darker py-12 border-b border-gray-dark">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl font-bold text-text-headings">Connect with Vitec Technologies</h1>
             </div>
         </section>
 
-        <!-- Contact Form Section -->
         <section class="contact-form-section py-12 md:py-20">
             <div class="container mx-auto px-6">
-                <!-- Form Container -->
                 <div class="max-w-2xl mx-auto bg-gray-darker rounded-lg shadow-xl p-8 md:p-12 border border-gray-dark">
                     <h2 class="text-3xl font-bold text-center text-text-headings mb-8">Send Us a Message</h2>
                     
-                    <form action="send_email.php" method="POST" class="contact-form space-y-6">
+                    <form action="email.php" method="POST" class="contact-form space-y-6">
                         
-                        <!-- Name Field -->
                         <div>
                             <label for="name" class="block text-sm font-semibold text-text-headings mb-2">Name:</label>
                             <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-darkest border border-gray-medium rounded-md text-text-main focus:ring-primary focus:border-primary transition duration-300" required>
                         </div>
-
-                        <!-- Email Field -->
                         <div>
                             <label for="email" class="block text-sm font-semibold text-text-headings mb-2">Email:</label>
                             <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-darkest border border-gray-medium rounded-md text-text-main focus:ring-primary focus:border-primary transition duration-300" required>
                         </div>
-
-                        <!-- Phone Field -->
                         <div>
                             <label for="phone" class="block text-sm font-semibold text-text-headings mb-2">Phone:</label>
                             <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 bg-gray-darkest border border-gray-medium rounded-md text-text-main focus:ring-primary focus:border-primary transition duration-300">
                         </div>
-                        
-                        <!-- Subject Field -->
                         <div>
                             <label for="subject" class="block text-sm font-semibold text-text-headings mb-2">Subject:</label>
                             <input type="text" id="subject" name="subject" class="w-full px-4 py-2 bg-gray-darkest border border-gray-medium rounded-md text-text-main focus:ring-primary focus:border-primary transition duration-300">
                         </div>
-
-                        <!-- Message Field -->
                         <div>
                             <label for="message" class="block text-sm font-semibold text-text-headings mb-2">Message:</label>
                             <textarea id="message" name="message" rows="8" class="w-full px-4 py-2 bg-gray-darkest border border-gray-medium rounded-md text-text-main focus:ring-primary focus:border-primary transition duration-300" required></textarea>
                         </div>
-
-                        <!-- Submit Button -->
                         <div class="text-center pt-4">
                             <button type="submit" class="w-auto bg-primary hover:bg-primary-light text-gray-darkest font-bold py-3 px-8 rounded-md transition duration-300 ease-in-out transform hover:translate-y-[-2px]">
                                 Send Message
@@ -138,34 +116,43 @@
             </div>
         </section>
 
-        <!-- Direct Contact Info Section -->
         <section class="direct-contact-info bg-gray-darker py-12 border-t border-b border-gray-dark">
-            <div class="container mx-auto px-6 max-w-2xl text-center">
-                <h2 class="text-2xl font-bold mb-4 text-text-headings">Or Reach Us Directly</h2>
-                <p class="mb-2"><strong>Pieter van Rooyen</strong> (Principal Developer)</p>
-                <p class="mb-2"><strong>Cell:</strong> +27 63 251 1232</p>
-                <p class="mb-4"><strong>Email:</strong> <a href="mailto:naudevr@gmail.com" class="text-primary-light hover:text-primary hover:underline">naudevr@gmail.com</a></p>
-                <p>
-                    <strong>Physical Address:</strong><br>
-                    19 Glen str, Equestria<br>
-                    Pretoria, Gauteng, South Africa
-                </p>
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 class="text-2xl font-bold mb-6 text-text-headings">Or Reach Us Directly</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="contact-card">
+                        <h3 class="text-xl font-semibold text-primary-light mb-2">Technical Support</h3>
+                        <p class="mb-1"><strong>Pieter van Rooyen</strong></p>
+                        <p class="mb-1"><strong>Cell:</strong> +27 63 251 1232</p>
+                        <p><strong>Email:</strong> <a href="mailto:pieter@vi-tec.co.za" class="text-primary-light hover:text-primary hover:underline">pieter@vi-tec.co.za</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <h3 class="text-xl font-semibold text-primary-light mb-2">Accounts</h3>
+                        <p class="mb-1"><strong>Amanda</strong></p>
+                        <p><strong>Email:</strong> <a href="mailto:amanda@vi-tec.co.za" class="text-primary-light hover:text-primary hover:underline">amanda@vi-tec.co.za</a></p>
+                    </div>
+                </div>
+                 <div class="mt-8">
+                    <p>
+                        <strong>Physical Address:</strong><br>
+                        19 Glen str, Equestria<br>
+                        Pretoria, Gauteng, South Africa
+                    </p>
+                </div>
             </div>
         </section>
         
-        <!-- Office Location Section -->
         <section class="office-location py-12">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-2xl font-bold mb-6 text-text-headings">Find Us on the Map</h2>
                 <div class="w-full max-w-6xl mx-auto shadow-lg rounded-lg overflow-hidden">
-                    <iframe src="https://maps.google.com/maps?q=19+Glen+Ave%2C+Equestria%2C+Pretoria&t=&z=15&ie=UTF8&iwloc=&output=embed" class="w-full" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.399949980861!2d28.33282231502127!3d-25.79047998362401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e955f1f0a5d6c9b%3A0x6b2e1b8ecb1641a9!2s19%20Glen%20St%2C%20Equestria%2C%20Pretoria%2C%200081!5e0!3m2!1sen!2sza!4v1671000000000!5m2!1sen!2sza" class="w-full" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-darkest text-gray-light py-8 border-t border-gray-dark">
         <div class="container mx-auto px-6 text-center">
             <div class="footer-links mb-4">
