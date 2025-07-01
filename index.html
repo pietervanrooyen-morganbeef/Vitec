@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitec Technologies - Innovative Software Solutions</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
-    <!-- Custom Tailwind Configuration and Styles -->
     <script>
         tailwind.config = {
             theme: {
@@ -36,17 +33,17 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Styles for the text-based logo, consistent with other pages */
+        /* The old .logo class for text is no longer needed on this page but can be kept for others */
         .logo {
             font-size: 1.8em;
             font-weight: bold;
-            color: #39FF14; /* --primary-neon */
+            color: #39FF14;
             text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
             transition: color 0.3s ease;
             text-decoration: none;
         }
         .logo:hover {
-            color: #6EE7B7; /* --primary-light */
+            color: #6EE7B7;
             text-decoration: none;
         }
         .hero {
@@ -56,10 +53,13 @@
 </head>
 <body class="bg-gray-darkest text-text-main">
 
-    <!-- Header -->
     <header class="bg-gray-darker shadow-md border-b border-gray-dark">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="logo">Vitec Technologies</a>
+            
+            <a href="index.html">
+                <img src="images/Vi-Tec_Logo.png" alt="Vitec Technologies Logo" class="h-12 w-auto">
+            </a>
+            
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="index.html" class="text-primary-light font-semibold border-b-2 border-primary pb-1">Home</a>
                 <a href="services.html" class="text-primary-neon hover:text-primary-light transition duration-300">Services</a>
@@ -68,7 +68,7 @@
                 <a href="contact.html" class="text-primary-neon hover:text-primary-light transition duration-300">Contact</a>
             </nav>
             <div class="contact-info-header text-sm text-right text-text-main">
-                <span class="font-semibold">Pieter van Rooyen</span><br>
+                <span class="font-semibold">Pieter van Rooyen</span>
                 <span>Call: +27 63 251 1232</span>
             </div>
             <div class="md:hidden">
