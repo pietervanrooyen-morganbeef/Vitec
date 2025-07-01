@@ -16,13 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // --- Email Configuration ---
-    
-    // The email address messages will be sent TO.
-    $recipient = "admin@vi-tec.co.za";
+// The email address messages will be sent TO.
+$recipient = "pieter@vi-tec.co.za, amanda@vi-tec.co.za, admin@vi-tec.co.za";
 
     // The subject line for the email you receive.
     // If the user provided a subject, use it. Otherwise, use a default.
-    $email_subject = "New Contact Form Submission: " . (!empty($subject) ? $subject : "From $name");
+    $email_subject = "New Contact Form Submission from Website : " . (!empty($subject) ? $subject : "From $name");
 
     // Build the email content.
     $email_content = "You have received a new message from your website contact form.\n\n";
