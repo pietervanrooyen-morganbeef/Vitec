@@ -154,14 +154,32 @@
         </div>
     </footer>
 
-    <script>
+   <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
 
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+            // Visitor Counter
+            const counterElement = document.getElementById('visitor-counter');
+            if (counterElement) {
+                let visitCount = localStorage.getItem('vitecVisitCount');
+
+                // On the first visit, start the counter at 1100
+                if (visitCount === null) {
+                    visitCount = 1100; // Changed this line
+                } else {
+                    visitCount = Number(visitCount) + 1;
+                }
+                
+                localStorage.setItem('vitecVisitCount', visitCount);
+                counterElement.textContent = visitCount.toLocaleString();
+            }
         });
     </script>
 </body>
