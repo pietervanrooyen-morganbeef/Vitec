@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Vitec Technologies</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
-    <!-- Custom Tailwind Configuration and Styles -->
     <script>
         tailwind.config = {
             theme: {
@@ -60,8 +57,8 @@
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
         
         <a href="index.html" class="flex items-center gap-x-3 text-decoration-none">
-            <img src="Images/viteclogo.jpg" alt="Technologies Logo" class="h-12 w-auto">
-            <span class="logo">Technologies</span>
+            <img src="Images/viteclogo.jpg" alt="Vitec Technologies Logo" class="h-12 w-auto">
+            <span class="logo"> Technologies</span>
         </a>
         
         <nav class="hidden md:flex items-center space-x-8">
@@ -72,26 +69,32 @@
             <a href="contact.html" class="text-primary-neon hover:text-primary-light transition duration-300">Contact</a>
         </nav>
         
-        <div class="contact-info-header text-sm text-right text-text-main">
+        <div class="contact-info-header text-sm text-right text-text-main hidden md:block">
             <span class="font-semibold">Pieter van Rooyen</span><br>
             <span>Call: +27 63 251 1232</span>
         </div>
 
-        <div class="md:hidden">
-            <button class="text-text-main focus:outline-none">
+        <div class="md:hidden relative z-10">
+            <button id="mobile-menu-button" class="text-text-main focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
     </div>
-</header>
-                  </div>
-            <div class="md:hidden">
-                <button class="text-text-main focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-darker py-4 border-t border-gray-dark">
+        <nav class="flex flex-col items-center space-y-4">
+            <a href="index.html" class="block text-primary-neon hover:text-primary-light transition duration-300">Home</a>
+            <a href="services.html" class="block text-primary-light font-semibold hover:text-primary transition duration-300">Services</a>
+            <a href="portfolio.html" class="block text-primary-neon hover:text-primary-light transition duration-300">Portfolio</a>
+            <a href="about.html" class="block text-primary-neon hover:text-primary-light transition duration-300">About</a>
+            <a href="contact.html" class="block text-primary-neon hover:text-primary-light transition duration-300">Contact</a>
+            <div class="contact-info-mobile text-sm text-center text-text-main pt-4">
+                <span class="font-semibold">Pieter van Rooyen</span><br>
+                <span>Call: +27 63 251 1232</span>
             </div>
-        </div>
-    </header>
+        </nav>
+    </div>
+</header>
 
     <main>
         <section class="page-header bg-gray-darker py-12 border-b border-gray-dark">
@@ -105,36 +108,36 @@
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                    <div class="service-item bg-gray-darker p-6 rounded-lg border border-gray-dark">
-    <h3>Custom Web Development</h3>
-    <p>We build responsive, high-performance web applications from the ground up using modern technologies. Whether you need a customer portal, an e-commerce platform, or a complex business tool, our solutions are secure, scalable, and tailored to your goals.</p>
-    <p class="text-light mt-4"><strong>Starting from just R1 950.00</strong> for initial development, with a monthly fee of only <strong>R 250.00</strong> that includes your domain name registration and 3 professional email addresses.</p>
-</div>
+                        <h3>Custom Web Development</h3>
+                        <p>We build responsive, high-performance web applications from the ground up using modern technologies. Whether you need a customer portal, an e-commerce platform, or a complex business tool, our solutions are secure, scalable, and tailored to your goals.</p>
+                        <p class="text-light mt-4"><strong>Starting from just R1 950.00</strong> for initial development, with a monthly fee of only <strong>R 250.00</strong> that includes your domain name registration and 3 professional email addresses.</p>
+                    </div>
                     <div class="service-item bg-gray-darker p-6 rounded-lg border border-gray-dark">
                         <h3>Mobile App Development</h3>
                         <p>Our team develops native and cross-platform mobile applications for iOS and Android. We focus on creating intuitive user experiences, robust backends, and seamless performance to keep your users engaged.</p>
                     </div>
-           <div class="service-item bg-gray-darker p-6 rounded-lg border border-gray-dark">
-    <h3>Client-Server Applications</h3>
-    <p>We design and develop robust client-server architectures that ensure efficient data processing and communication. Our solutions are built for high performance, security, and scalability, supporting your business operations seamlessly.</p>
-    
-    <div class="mt-4">
-        <h4 class="text-light">Our Expertise Includes:</h4>
-        <p>With a portfolio of over 100 developed client-server applications, our experienced team leverages a wide range of technologies to meet diverse business needs. We specialize in creating systems that integrate with various hardware and peripherals.</p>
-        <ul class="list-disc list-inside mt-2">
-            <li><strong>Database Systems:</strong> MS SQL Server, MySQL</li>
-            <li><strong>Programming Languages:</strong> C#, VB.NET, Python, and more.</li>
-            <li><strong>Hardware Integration:</strong> Custom software for Fingerprint Readers, RFID Scanners, Weighing Scales (via RS232 ports), and other specialized equipment.</li>
-        </ul>
-    </div>
-</div>
+                   <div class="service-item bg-gray-darker p-6 rounded-lg border border-gray-dark">
+                        <h3>Client-Server Applications</h3>
+                        <p>We design and develop robust client-server architectures that ensure efficient data processing and communication. Our solutions are built for high performance, security, and scalability, supporting your business operations seamlessly.</p>
+                        
+                        <div class="mt-4">
+                            <h4 class="text-light">Our Expertise Includes:</h4>
+                            <p>With a portfolio of over 100 developed client-server applications, our experienced team leverages a wide range of technologies to meet diverse business needs. We specialize in creating systems that integrate with various hardware and peripherals.</p>
+                            <ul class="list-disc list-inside mt-2">
+                                <li><strong>Database Systems:</strong> MS SQL Server, MySQL</li>
+                                <li><strong>Programming Languages:</strong> C#, VB.NET, Python, and more.</li>
+                                <li><strong>Hardware Integration:</strong> Custom software for Fingerprint Readers, RFID Scanners, Weighing Scales (via RS232 ports), and other specialized equipment.</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="service-item bg-gray-darker p-6 rounded-lg border border-gray-dark">
                         <h3>Cloud & DevOps</h3>
                         <p>Leverage the power of the cloud with our expert services. We handle cloud infrastructure setup, migration, and management. Our DevOps practices ensure continuous integration and delivery (CI/CD), automating your workflow for faster and more reliable releases.</p>
                     </div>
-<div class="service-item bg-gray-darker p-6 rounded-lg border border-gray-dark">
-    <h3>Remote Desktop Support</h3>
-    <p>Experience instant IT solutions without leaving your desk. Our Remote Desktop Support service allows our expert technicians to securely access your computer or device from anywhere, providing real-time diagnostics and fixes while you watch. From software installations and virus removal to system troubleshooting and updates, we resolve your technical issues efficiently and securely, getting you back to work faster.</p>
-</div>
+                    <div class="service-item bg-gray-darker p-6 rounded-lg border border-gray-dark">
+                        <h3>Remote Desktop Support</h3>
+                        <p>Experience instant IT solutions without leaving your desk. Our Remote Desktop Support service allows our expert technicians to securely access your computer or device from anywhere, providing real-time diagnostics and fixes while you watch. From software installations and virus removal to system troubleshooting and updates, we resolve your technical issues efficiently and securely, getting you back to work faster.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -152,5 +155,16 @@
             <p>&copy; 2025 Vitec Technologies. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
