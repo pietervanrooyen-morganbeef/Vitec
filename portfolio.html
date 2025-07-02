@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vitec - Contact Us</title>
-    
+    <title>Portfolio - Vitec Technologies</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
@@ -45,6 +45,25 @@
             color: #6EE7B7; /* --primary-light */
             text-decoration: none;
         }
+        .golden-text-shine {
+            background: linear-gradient(135deg, #c09f39, #f9f0c7, #c09f39);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            animation: shine-effect 4s linear infinite;
+        }
+        @keyframes shine-effect {
+            to {
+                background-position: -200% center;
+            }
+        }
+        .dark-blue-text {
+            color: #5DADE2;
+            text-shadow: 0 0 5px rgba(93, 173, 226, 0.4);
+        }
     </style>
 </head>
 <body class="bg-gray-darkest text-text-main">
@@ -59,9 +78,9 @@
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="index.html" class="text-primary-neon hover:text-primary-light transition duration-300">Home</a>
                 <a href="services.html" class="text-primary-neon hover:text-primary-light transition duration-300">Services</a>
-                <a href="portfolio.html" class="text-primary-neon hover:text-primary-light transition duration-300">Portfolio</a>
+                <a href="portfolio.html" class="text-primary-light font-semibold border-b-2 border-primary pb-1">Portfolio</a>
                 <a href="about.html" class="text-primary-neon hover:text-primary-light transition duration-300">About</a>
-                <a href="contact.html" class="text-primary-light font-semibold border-b-2 border-primary pb-1">Contact</a>
+                <a href="contact.html" class="text-primary-neon hover:text-primary-light transition duration-300">Contact</a>
             </nav>
 
             <div class="contact-info-header text-sm text-right text-text-main hidden md:block">
@@ -80,9 +99,9 @@
             <nav class="flex flex-col items-center space-y-4">
                 <a href="index.html" class="block text-primary-neon hover:text-primary-light transition duration-300">Home</a>
                 <a href="services.html" class="block text-primary-neon hover:text-primary-light transition duration-300">Services</a>
-                <a href="portfolio.html" class="block text-primary-neon hover:text-primary-light transition duration-300">Portfolio</a>
+                <a href="portfolio.html" class="block text-primary-light font-semibold hover:text-primary transition duration-300">Portfolio</a>
                 <a href="about.html" class="block text-primary-neon hover:text-primary-light transition duration-300">About</a>
-                <a href="contact.html" class="block text-primary-light font-semibold hover:text-primary transition duration-300">Contact</a>
+                <a href="contact.html" class="block text-primary-neon hover:text-primary-light transition duration-300">Contact</a>
                 <div class="contact-info-mobile text-sm text-center text-text-main pt-4">
                     <span class="font-semibold">Pieter van Rooyen</span><br>
                     <span>Call: +27 63 251 1232</span>
@@ -93,84 +112,38 @@
 
     <main>
         <section class="page-header bg-gray-darker py-12 border-b border-gray-dark">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl font-bold text-text-headings">Connect with Vitec Technologies</h1>
-            </div>
+             <div class="container mx-auto px-6 text-center">
+                 <h1 class="text-4xl font-bold text-text-headings">Our Work</h1>
+                 <p class="mt-4 max-w-3xl mx-auto text-lg text-text-main">We are proud of the solutions we've delivered. Here are some of our recent projects. Contact us for a demo.</p>
+             </div>
         </section>
 
-        <section class="contact-form-section py-12 md:py-20">
+        <section class="py-12 md:py-20">
             <div class="container mx-auto px-6">
-                <div class="max-w-2xl mx-auto bg-gray-darker rounded-lg shadow-xl p-8 md:p-12 border border-gray-dark">
-                    <h2 class="text-3xl font-bold text-center text-text-headings mb-8">Send Us a Message</h2>
-                    
-                    <form action="email.php" method="POST" class="contact-form space-y-6">
-                        
-                        <div>
-                            <label for="name" class="block text-sm font-semibold text-text-headings mb-2">Name:</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-darkest border border-gray-medium rounded-md text-text-main focus:ring-primary focus:border-primary transition duration-300" required>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-semibold text-text-headings mb-2">Email:</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-darkest border border-gray-medium rounded-md text-text-main focus:ring-primary focus:border-primary transition duration-300" required>
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-sm font-semibold text-text-headings mb-2">Phone:</label>
-                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 bg-gray-darkest border border-gray-medium rounded-md text-text-main focus:ring-primary focus:border-primary transition duration-300">
-                        </div>
-                        <div>
-                            <label for="subject" class="block text-sm font-semibold text-text-headings mb-2">Subject:</label>
-                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 bg-gray-darkest border border-gray-medium rounded-md text-text-main focus:ring-primary focus:border-primary transition duration-300">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-semibold text-text-headings mb-2">Message:</label>
-                            <textarea id="message" name="message" rows="8" class="w-full px-4 py-2 bg-gray-darkest border border-gray-medium rounded-md text-text-main focus:ring-primary focus:border-primary transition duration-300" required></textarea>
-                        </div>
-                        <div class="text-center pt-4">
-                            <button type="submit" class="w-auto bg-primary hover:bg-primary-light text-gray-darkest font-bold py-3 px-8 rounded-md transition duration-300 ease-in-out transform hover:translate-y-[-2px]">
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="direct-contact-info bg-gray-darker py-12 border-t border-b border-gray-dark">
-            <div class="container mx-auto px-6 max-w-4xl text-center">
-                <h2 class="text-2xl font-bold mb-6 text-text-headings">Or Reach Us Directly</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="contact-card">
-                        <h3 class="text-xl font-semibold text-primary-light mb-2">Technical</h3>
-                        <p class="mb-1"><strong>Pieter</strong></p>
-                        <p class="mb-1"><strong>Cell:</strong> +27 63 251 1232</p>
-                        <p><strong>Email:</strong> <a href="mailto:pieter@vi-tec.co.za" class="text-primary-light hover:text-primary hover:underline">pieter@vi-tec.co.za</a></p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="project-card bg-gray-darker p-6 rounded-lg border border-gray-dark">
+                        <img src="Images/WeighTrackProLogo.png" alt="WeighTrackPro Logo" class="rounded-lg mb-4">
+                        <h3 class="golden-text-shine text-2xl font-bold">WeighTrackPro</h3>
+                        <p class="mt-2">WeighTrackPro, a comprehensive C# and SQL Server-based application designed for weighing and data management in industries handling bulk materials. The system facilitates real-time weighing data capture via RS232 port, manages company parameters including logo and contact details, and allows database configuration through a dedicated form. User roles and permissions are central to its security, governing access to features like weighing operations, reporting (Excel, PDF, email), and system settings. Additionally, it incorporates scale parameter management with automatic service and verification reminders via email, alongside robust auditing and error handling to ensure data integrity and system stability, demonstrating its focus on efficiency and reliability.</p>
                     </div>
-                    <div class="contact-card">
-                        <h3 class="text-xl font-semibold text-primary-light mb-2">Accounts</h3>
-                        <p class="mb-1"><strong>Amanda</strong></p>
-                        <p class="mb-1"><strong>Cell:</strong> +27 76 940 4135</p>
-                        <p><strong>Email:</strong> <a href="mailto:amanda@vi-tec.co.za" class="text-primary-light hover:text-primary hover:underline">amanda@vi-tec.co.za</a></p>
+                     <div class="project-card bg-gray-darker p-6 rounded-lg border border-gray-dark">
+                        <img src="Images/BarCodeCreatorLogo.png" alt="BarCodeCreator Logo" class="rounded-lg mb-4">
+                         <h3 class="dark-blue-text text-2xl font-bold">Barcode Creator</h3>
+                         <p class="mt-2">Barcode Creator, a powerful and intuitive desktop application for Windows designed to streamline your product labeling workflow. Barcode Creator seamlessly integrates with your existing product database, allowing you to instantly generate and preview industry-standard CODE_128 barcodes for any item in your inventory. Simply select a product from the dropdown list, specify the number of labels you need, and print high-quality barcodes complete with product descriptions and codes. Built with C# and powered by the robust ZXing.Net engine, Barcode Creator offers a reliable and efficient solution for all your in-house barcode printing needs.</p>
+                    </div>
+                     <div class="project-card bg-gray-darker p-6 rounded-lg border border-gray-dark">
+                         <img src="https://placehold.co/800x500/1F2937/F9FAFB?text=Project+3" alt="Project 3 Screenshot" class="rounded-lg mb-4">
+                         <h3 class="text-2xl font-bold text-primary">Project Three: Cloud Data Platform</h3>
+                         <p class="mt-2">A scalable data processing platform built on AWS for a financial tech startup.</p>
+                    </div>
+                     <div class="project-card bg-gray-darker p-6 rounded-lg border border-gray-dark">
+                         <img src="https://placehold.co/800x500/1F2937/F9FAFB?text=Project+4" alt="Project 4 Screenshot" class="rounded-lg mb-4">
+                         <h3 class="text-2xl font-bold text-primary">Project Four: Public-Facing Website</h3>
+                         <p class="mt-2">A modern, responsive website for a non-profit organization to boost online engagement.</p>
                     </div>
                 </div>
-                 <div class="mt-8">
-                    <p>
-                        <strong>Physical Address:</strong><br>
-                        19 Glen str, Equestria<br>
-                        Pretoria, Gauteng, South Africa
-                    </p>
-                </div>
             </div>
         </section>
-        
-        <section class="office-location py-12">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-2xl font-bold mb-6 text-text-headings">Find Us on the Map</h2>
-                <div class="w-full max-w-6xl mx-auto shadow-lg rounded-lg overflow-hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.359550785741!2d28.3328333150215!3d-25.79153998362357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9561a37c54b3c9%3A0x768484b3164911d7!2s19%20Glen%20St%2C%20Equestria%2C%20Pretoria%2C%200081!5e0!3m2!1sen!2sza!4v1678886543210!5m2!1sen!2sza" class="w-full" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <footer class="bg-gray-darkest text-gray-light py-8 border-t border-gray-dark">
@@ -182,11 +155,7 @@
                 <a href="about.html" class="px-3 hover:text-primary">About</a>
                 <a href="contact.html" class="px-3 hover:text-primary">Contact</a>
             </div>
-            <div class="legal-info text-sm">
-                © 2025 Vitec. All Rights Reserved. | 
-                <a href="privacy.html" class="hover:text-primary">Privacy Policy</a> | 
-                <a href="terms.html" class="hover:text-primary">Terms of Service</a>
-            </div>
+            <p>© 2025 Vitec Technologies. All Rights Reserved.</p>
         </div>
     </footer>
 
