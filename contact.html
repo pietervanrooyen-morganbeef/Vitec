@@ -51,7 +51,10 @@
 
     <header class="bg-gray-darker shadow-md border-b border-gray-dark">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="logo">Vitec Technologies</a>
+            <a href="index.html" class="flex items-center gap-x-3 text-decoration-none">
+                <img src="Images/viteclogo.jpg" alt="Vitec Technologies Logo" class="h-12 w-auto">
+                <span class="logo"> Technologies</span>
+            </a>
             
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="index.html" class="text-primary-neon hover:text-primary-light transition duration-300">Home</a>
@@ -60,15 +63,31 @@
                 <a href="about.html" class="text-primary-neon hover:text-primary-light transition duration-300">About</a>
                 <a href="contact.html" class="text-primary-light font-semibold border-b-2 border-primary pb-1">Contact</a>
             </nav>
-            <div class="contact-info-header text-sm text-right text-text-main">
-                <span class="font-semibold">Pieter</span><br> 
+
+            <div class="contact-info-header text-sm text-right text-text-main hidden md:block">
+                <span class="font-semibold">Pieter van Rooyen</span><br>
                 <span>Call: +27 63 251 1232</span>
             </div>
-            <div class="md:hidden">
-                <button class="text-text-main focus:outline-none">
+
+            <div class="md:hidden relative z-10">
+                <button id="mobile-menu-button" class="text-text-main focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-darker py-4 border-t border-gray-dark">
+            <nav class="flex flex-col items-center space-y-4">
+                <a href="index.html" class="block text-primary-neon hover:text-primary-light transition duration-300">Home</a>
+                <a href="services.html" class="block text-primary-neon hover:text-primary-light transition duration-300">Services</a>
+                <a href="portfolio.html" class="block text-primary-neon hover:text-primary-light transition duration-300">Portfolio</a>
+                <a href="about.html" class="block text-primary-neon hover:text-primary-light transition duration-300">About</a>
+                <a href="contact.html" class="block text-primary-light font-semibold hover:text-primary transition duration-300">Contact</a>
+                <div class="contact-info-mobile text-sm text-center text-text-main pt-4">
+                    <span class="font-semibold">Pieter van Rooyen</span><br>
+                    <span>Call: +27 63 251 1232</span>
+                </div>
+            </nav>
         </div>
     </header>
 
@@ -147,7 +166,7 @@
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-2xl font-bold mb-6 text-text-headings">Find Us on the Map</h2>
                 <div class="w-full max-w-6xl mx-auto shadow-lg rounded-lg overflow-hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.399949980861!2d28.33282231502127!3d-25.79047998362401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e955f1f0a5d6c9b%3A0x6b2e1b8ecb1641a9!2s19%20Glen%20St%2C%20Equestria%2C%20Pretoria%2C%200081!5e0!3m2!1sen!2sza!4v1671000000000!5m2!1sen!2sza" class="w-full" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.359550785741!2d28.3328333150215!3d-25.79153998362357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9561a37c54b3c9%3A0x768484b3164911d7!2s19%20Glen%20St%2C%20Equestria%2C%20Pretoria%2C%200081!5e0!3m2!1sen!2sza!4v1678886543210!5m2!1sen!2sza" class="w-full" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
@@ -171,5 +190,15 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
